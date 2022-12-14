@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ARCore Mustache</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="start_recording_button_text" translatable="false">START RECORDING</string>
+    <string name="stop_recording_button_text" translatable="false">STOP RECORDING</string>
+    <string name="recorded_video_button_text" translatable="false">RECORDED VIDEOS</string>
+    <string name="playback_path_text" translatable="false">Playback: %1$s</string>
+    <string name="recording_path_text" translatable="false">Recording: %1$s</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

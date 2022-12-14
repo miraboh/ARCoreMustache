@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener"/>
+        <variable
+            name="video"
+            type="com.myraboh.model.Video"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_line"
+        android:padding="4dp"
+        android:layout_margin="10dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/edit_tag"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="@{clickListener}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/video_thumb"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:clickable="true"
+                android:layout_gravity="center"
+                android:foreground="?selectableItemBackground"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/mustache1" />
+
+            <TextView
+                android:id="@+id/duration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="10dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/purple_500"
+                android:text="Duration: 00:00:20"/>
+
+            <TextView
+                android:id="@+id/tag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="10dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/purple_500"
+                android:text="Tag: (¯\_(ツ)_/¯)"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

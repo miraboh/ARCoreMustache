@@ -1,0 +1,79 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    namespace Versions.APPLICATION_ID
+    compileSdk = Versions.COMPILE_SDK
+
+    defaultConfig {
+        applicationId Versions.APPLICATION_ID
+        minSdk Versions.MIN_SDK
+        targetSdk Versions.TARGET_SDK
+        versionCode Versions.versionCodeMobile
+        versionName Versions.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+}
+
+dependencies {
+
+    implementation(project(":model"))
+
+    implementation(Dependencies.CORE_KTX)
+    implementation(Dependencies.APPCOMPAT)
+    implementation(Dependencies.MATERIAL)
+    implementation(Dependencies.CONSTRAINT_LAYOUT)
+    testImplementation(Dependencies.JUNIT)
+    androidTestImplementation(Dependencies.EXT_JUNIT)
+    androidTestImplementation(Dependencies.ESPRESSO_CORE)
+
+    // Navigation
+    implementation(Dependencies.NAVIGATION_FRAGMENT_KTX)
+    implementation(Dependencies.NAVIGATION_UI_KTX)
+
+    // AR CORE
+    implementation(Dependencies.AR_CORE)
+
+    // LOTTIE
+    implementation(Dependencies.LOTTIE)
+
+    // ROOM
+    implementation(Dependencies.ROOM_KTX)
+    implementation(Dependencies.ROOM_RUNTIME)
+    kapt(Dependencies.ROOM_COMPILER)
+
+    // Dagger Hilt
+    implementation(Dependencies.HILT_ANDROID)
+    androidTestImplementation(Dependencies.HILT_TESTING)
+    kapt(Dependencies.HILT_COMPILER)
+    kaptAndroidTest(Dependencies.HILT_COMPILER)
+
+    // Glide
+    implementation(Dependencies.GLIDE)
+    kapt(Dependencies.GLIDE_COMPILER)
+}
